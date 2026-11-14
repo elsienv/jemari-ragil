@@ -1,0 +1,76 @@
+import React, { useState } from 'react';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
+import CheckoutShell from '../CheckoutItem/CheckoutShell';
+import { contactErrors, deliveryErrors, useCheckout } from '../../context/CheckoutContext';
+import { shippingMethods } from '../../lib/shop';
+import { formatCurrency } from '../../lib/format';
+import './DeliveryMethod.css';
+
+export default function DeliveryMethod() {
+  const { draft, selectedProducts, updateDelivery } = useCheckout();
+  const [errors, setErrors] = useState({});
+  const navigate = useNavigate();
+  if (!selectedProducts.length) return <Navigate to="/cart" replace />;
+  if (Object.keys(contactErrors(draft.contact)).length) return <Navigate to="/checkout/info" replace />;
+
+  const field = (name, value) => {
+    updateDelivery({ [name]: value });
+    if (errors[name]) setErrors((previous) => ({ ...previous, [name]: '' }));
+  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const nextErrors = deliveryErrors(draft.delivery);
+    setErrors(nextErrors);
+    if (!Object.keys(nextErrors).length) navigate('/checkout/payment');
+  };
+
+  return (
+    <CheckoutShell step={2} title="Antar ke mana?" description="Pilih cara menerima pesanan. Tarif berikut adalah contoh simulasi dan tidak terhubung dengan layanan kurir.">
+      <form onSubmit={handleSubmit} noValidate className="checkout-form">
+        <fieldset className="delivery-methods">
+          <legend className="sr-only">Metode pengiriman simulasi</legend>
+          {shippingMethods.map((method) => (
+            <label className={'delivery-choice' + (draft.delivery.method === method.id ? ' is-selected' : '')} key={method.id}>
+              <input type="radio" name="shipping-method" value={method.id} checked={draft.delivery.method === method.id} onChange={() => field('method', method.id)} />
+              <span><strong>{method.label}</strong><small>{method.description}</small></span>
+              <b>{method.price === 0 ? 'Gratis' : formatCurrency(method.price)}</b>
+            </label>
+          ))}
+        </fieldset>
+        {errors.method && <p className="checkout-field-error" role="alert">{errors.method}</p>}
+        {draft.delivery.method === 'pickup' ? (
+          <div className="delivery-pickup-note">
+            <span aria-hidden="true">⌂</span>
+            <div><h3>Ambil sendiri di Salatiga</h3><p>Alamat dan jadwal pengambilan akan dikonfirmasi pada layanan toko yang sebenarnya. Pada demo ini, tidak ada jadwal yang dibuat.</p></div>
+          </div>
+        ) : (
+          <div className="delivery-address-fields">
+            <h3>Alamat penerima</h3>
+            <div className="form-field">
+              <label htmlFor="shipping-address">Alamat lengkap <span aria-hidden="true">*</span></label>
+              <textarea id="shipping-address" autoComplete="street-address" rows={3} value={draft.delivery.address} onChange={(event) => field('address', event.target.value)} placeholder="Jalan, nomor rumah, kelurahan, dan kecamatan" required aria-invalid={!!errors.address} aria-describedby={errors.address ? 'shipping-address-error' : undefined} />
+              {errors.address && <span id="shipping-address-error" className="checkout-field-error">{errors.address}</span>}
+            </div>
+            <div className="checkout-field-row">
+              <div className="form-field">
+                <label htmlFor="shipping-city">Kota / kabupaten <span aria-hidden="true">*</span></label>
+                <input id="shipping-city" autoComplete="address-level2" value={draft.delivery.city} onChange={(event) => field('city', event.target.value)} placeholder="Contoh: Salatiga" required aria-invalid={!!errors.city} aria-describedby={errors.city ? 'shipping-city-error' : undefined} />
+                {errors.city && <span id="shipping-city-error" className="checkout-field-error">{errors.city}</span>}
+              </div>
+              <div className="form-field">
+                <label htmlFor="shipping-postal">Kode pos <span aria-hidden="true">*</span></label>
+                <input id="shipping-postal" inputMode="numeric" autoComplete="postal-code" maxLength={5} value={draft.delivery.postalCode} onChange={(event) => field('postalCode', event.target.value.replace(/[^0-9]/g, ''))} placeholder="50700" required aria-invalid={!!errors.postalCode} aria-describedby={errors.postalCode ? 'shipping-postal-error' : undefined} />
+                {errors.postalCode && <span id="shipping-postal-error" className="checkout-field-error">{errors.postalCode}</span>}
+              </div>
+            </div>
+          </div>
+        )}
+        <div className="form-field">
+          <label htmlFor="shipping-note">Catatan pesanan <span className="muted">(opsional)</span></label>
+          <textarea id="shipping-note" rows={3} value={draft.delivery.note} onChange={(event) => field('note', event.target.value)} placeholder="Ada pesan khusus untuk pilihanmu?" />
+        </div>
+        <div className="checkout-form-actions"><Link to="/checkout/info">← Informasi kontak</Link><button className="button" type="submit">Lanjut ke pembayaran →</button></div>
+      </form>
+    </CheckoutShell>
+  );
+}

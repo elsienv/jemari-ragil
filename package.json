@@ -1,0 +1,28 @@
+{
+    "name":  "jemari-ragil-portfolio",
+    "version":  "1.0.0",
+    "private":  true,
+    "type":  "module",
+    "description":  "Portfolio e-commerce Jemari Ragil Ã¢â‚¬â€ React, katalog lokal, dan checkout simulasi.",
+    "engines":  {
+                    "node":  "\u003e=22.12.0"
+                },
+    "scripts":  {
+                    "dev":  "vite --host 127.0.0.1",
+                    "start":  "vite --host 127.0.0.1",
+                    "build":  "vite build",
+                    "preview":  "vite preview --host 127.0.0.1",
+                    "test":  "node --test tests/shop.test.js tests/storage.test.js tests/catalog.test.js tests/checkout.test.js",
+                    "check:render":  "node scripts/check-render.mjs"
+                },
+    "dependencies":  {
+                         "react":  "^18.3.1",
+                         "react-dom":  "^18.3.1",
+                         "react-icons":  "^5.2.1",
+                         "react-router-dom":  "^6.30.6"
+                     },
+    "devDependencies":  {
+                            "@vitejs/plugin-react":  "^6.3.0",
+                            "vite":  "^8.3.8"
+                        }
+}
