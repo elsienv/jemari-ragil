@@ -10,43 +10,43 @@ export default function AboutPage() {
       <header className="container page-heading about-heading">
         <p className="eyebrow">Tentang Jemari Ragil</p>
         <h1>
-          Hal kecil.
+          Hadiah personal.
           <br />
-          <em>Arti yang besar.</em>
+          <em>Kenangan yang berarti.</em>
         </h1>
         <p className="muted">
-          Sebuah eksplorasi tentang hadiah personal, pengalaman berbelanja, dan karya yang terus
-          bertumbuh.
+          Buket, cetak foto, suvenir, dan aksesori untuk merayakan momen serta orang-orang yang
+          berarti.
         </p>
       </header>
       <section className="container about-story" aria-labelledby="about-story-title">
         <div className="about-image">
           {visual && <img src={visual.image} alt={visual.title} width="700" height="800" />}
-          <span>Jemari Ragil / sebuah studi pengalaman</span>
+          <span>Jemari Ragil / hadiah personal dari Salatiga</span>
         </div>
         <div className="about-story-copy">
-          <p className="eyebrow">Di balik proyek ini</p>
+          <p className="eyebrow">Tentang toko kami</p>
           <h2 id="about-story-title">
-            Berawal dari skripsi,
+            Dari hal sederhana,
             <br />
-            dirawat menjadi portofolio.
+            menjadi kenangan berharga.
           </h2>
           <p>
-            Jemari Ragil berawal sebagai proyek skripsi berupa antarmuka toko online untuk produk
-            hadiah, cetak foto, souvenir, dan aksesori. Versi ini mengembangkan kembali gagasan
-            tersebut menjadi studi portofolio yang bisa dijelajahi.
+            Jemari Ragil adalah toko hadiah personal berbasis di Salatiga. Pilihan buket, cetak
+            foto, suvenir, dan aksesori hadir untuk menemani berbagai cerita, dari ucapan terima
+            kasih sampai perayaan bersama orang terdekat.
           </p>
           <p>
-            Fokusnya sederhana: membantu orang menemukan sesuatu yang terasa personal. Dari
-            menjelajah koleksi sampai mencoba alur checkout, setiap langkah dibuat agar lebih jelas,
-            tenang, dan menyenangkan.
+            Kami percaya hadiah tidak harus besar untuk terasa istimewa. Foto yang menyimpan momen,
+            pesan yang ditulis dengan tulus, atau benda kecil yang mengingatkan pada seseorang bisa
+            membuat pemberian terasa lebih dekat.
           </p>
           <p className="about-honesty">
-            Situs ini adalah demonstrasi. Katalog menggunakan data contoh dan tidak menerima
-            pemesanan, pembayaran, atau pengiriman sungguhan.
+            Ada cerita di balik setiap pilihan. Temukan bentuk yang paling dekat dengan orang yang
+            ingin kamu bahagiakan.
           </p>
           <Link to="/store" className="button-secondary">
-            Jelajahi karya <span aria-hidden="true">↗</span>
+            Jelajahi koleksi <span aria-hidden="true">↗</span>
           </Link>
         </div>
       </section>
@@ -67,18 +67,18 @@ export default function AboutPage() {
             </article>
             <article>
               <span aria-hidden="true">02 /</span>
-              <h3>Mudah dijelajahi.</h3>
+              <h3>Merayakan kebersamaan.</h3>
               <p>
-                Cari, saring, simpan favorit, lalu coba alur belanja yang membantu menentukan
-                pilihan.
+                Untuk ulang tahun, kelulusan, atau sekadar ucapan terima kasih. Setiap momen punya
+                alasan untuk dirayakan bersama orang yang berarti.
               </p>
             </article>
             <article>
               <span aria-hidden="true">03 /</span>
-              <h3>Jujur apa adanya.</h3>
+              <h3>Menyimpan kenangan.</h3>
               <p>
-                Setiap interaksi demo diberi keterangan yang jelas. Tidak ada klaim penjualan atau
-                ulasan pelanggan yang dibuat-buat.
+                Beri tempat untuk foto dan cerita favoritmu, lewat cetakan, suvenir, serta aksesori
+                yang bisa menjadi pengingat kecil dalam keseharian.
               </p>
             </article>
           </div>

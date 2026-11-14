@@ -15,11 +15,11 @@ export default function ShippingStepPage() {
     <CheckoutShell
       step={2}
       title="Antar ke mana?"
-      description="Pilih cara menerima pesanan. Tarif berikut adalah contoh simulasi dan tidak terhubung dengan layanan kurir."
+      description="Pilih pengambilan di toko atau pengiriman ke alamat penerima."
     >
       <form onSubmit={handleSubmit} noValidate className="checkout-form">
         <fieldset className="delivery-methods">
-          <legend className="sr-only">Metode pengiriman simulasi</legend>
+          <legend className="sr-only">Metode pengiriman</legend>
           {shippingMethods.map((method) => (
             <label
               className={'delivery-choice' + (delivery.method === method.id ? ' is-selected' : '')}
@@ -50,10 +50,7 @@ export default function ShippingStepPage() {
             <span aria-hidden="true">⌂</span>
             <div>
               <h3>Ambil sendiri di Salatiga</h3>
-              <p>
-                Alamat dan jadwal pengambilan akan dikonfirmasi pada layanan toko yang sebenarnya.
-                Pada demo ini, tidak ada jadwal yang dibuat.
-              </p>
+              <p>Pengambilan langsung di Salatiga tanpa biaya pengiriman.</p>
             </div>
           </div>
         ) : (

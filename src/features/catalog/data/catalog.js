@@ -246,7 +246,7 @@ const entries = [
     'product-18-cst.jpeg',
     'custom',
     20000,
-    'Inspirasi kreasi untuk momen spesial. Pada demo ini, produk disajikan sebagai contoh katalog.',
+    'Inspirasi kreasi untuk momen spesial, dengan sentuhan personal yang dekat dengan ceritamu.',
     false,
     '',
     10,

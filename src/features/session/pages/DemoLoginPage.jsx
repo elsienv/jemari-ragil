@@ -14,7 +14,7 @@ export default function DemoLoginPage() {
           <br />
           <em>cerita personalmu.</em>
         </h1>
-        <p>Simpan favorit dan coba perjalanan belanja dengan namamu sendiri.</p>
+        <p>Simpan favorit dan temukan pilihan yang dekat dengan ceritamu.</p>
         <img
           src={assetUrl('/images/product-13-pht.jpeg')}
           alt="Cetakan foto polaroid dalam koleksi Jemari Ragil"
@@ -24,12 +24,9 @@ export default function DemoLoginPage() {
         <span className="demo-login-icon">
           <FiUser />
         </span>
-        <p className="eyebrow">Profil demo</p>
+        <p className="eyebrow">Profil belanja</p>
         <h2>{profile ? 'Halo, ' + profile.name : 'Siapa nama panggilanmu?'}</h2>
-        <p>
-          Ini profil lokal untuk mencoba portofolio. Tidak memerlukan password dan bukan autentikasi
-          akun sungguhan.
-        </p>
+        <p>Isi nama panggilan agar kami bisa menyapamu saat menjelajah koleksi.</p>
         <form onSubmit={submit}>
           <div className="form-field">
             <label htmlFor="demo-name">Nama panggilan</label>
@@ -45,20 +42,18 @@ export default function DemoLoginPage() {
             />
           </div>
           <button className="button" type="submit">
-            Mulai jelajahi <FiArrowRight />
+            Lanjut belanja <FiArrowRight />
           </button>
         </form>
         {profile && (
           <button className="button-quiet" onClick={handleUseGuest}>
-            Gunakan mode tamu
+            Jelajahi sebagai tamu
           </button>
         )}
         <Link className="text-link" to="/store">
           Lanjut tanpa profil
         </Link>
-        <div className="demo-login-note">
-          Gunakan data contoh saat checkout. Data demo tersimpan pada browser ini.
-        </div>
+        <div className="demo-login-note">Pilihanmu tersimpan di perangkat ini.</div>
       </div>
     </section>
   );

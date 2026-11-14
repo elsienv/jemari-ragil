@@ -18,7 +18,7 @@ export function usePaymentStep() {
     try {
       const order = completeOrder(paymentMethod);
       if (!order) return;
-      notify('Pesanan demo berhasil disimpan.');
+      notify('Pesanan berhasil disimpan.');
       navigate('/orders', { replace: true, state: { newOrderId: order.id } });
     } catch (failure) {
       setError(failure.message || 'Pesanan belum tersimpan. Silakan coba lagi.');

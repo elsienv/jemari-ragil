@@ -43,7 +43,7 @@ try {
     ['/blogs', 'Cerita'],
     ['/blogs/hadiah-kecil-cerita-besar', 'Hadiah kecil, cerita yang besar'],
     ['/blogs/missing', 'Cerita tidak ditemukan'],
-    ['/about', 'Berawal dari skripsi,'],
+    ['/about', 'Hadiah personal.'],
     ['/contact', 'Mulai dari'],
     ['/login', 'Siapa nama panggilanmu?'],
     ['/cart', 'Masih ada ruang untuk kenangan.'],
@@ -84,7 +84,7 @@ try {
 
   const order = createDemoOrder({ ownerId: 'guest', draft, cart, paymentMethod: 'cod' });
   localStorage.setItem(ordersStorageKey('guest'), JSON.stringify([order]));
-  assert.ok(render('/orders').includes('JR-DEMO-RENDER'), 'Saved order did not render');
+  assert.ok(render('/orders').includes('JR-RENDER'), 'Saved order did not render');
 
   console.log(
     '20 route renders passed using the actual application routes, providers, and layout.',

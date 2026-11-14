@@ -60,7 +60,7 @@ export default function ProductDetailPage() {
           {product.rating > 0 ? (
             <p className="detail-rating">
               <span aria-hidden="true">★</span> {Number(product.rating).toFixed(1)}{' '}
-              <span className="muted">/ 5 · {product.reviewsCount} ulasan pada data demo</span>
+              <span className="muted">/ 5 · {product.reviewsCount} ulasan</span>
             </p>
           ) : (
             <p className="detail-rating muted">Belum ada ulasan.</p>
@@ -71,7 +71,7 @@ export default function ProductDetailPage() {
               className={product.stock > 0 ? 'stock-dot' : 'stock-dot is-empty'}
               aria-hidden="true"
             />
-            {product.stock > 0 ? `${product.stock} tersedia dalam koleksi demo` : 'Sedang habis'}
+            {product.stock > 0 ? `${product.stock} tersedia` : 'Sedang habis'}
             {cartQuantity > 0 && <span> · {cartQuantity} di keranjangmu</span>}
           </div>
           <form className="detail-order-form" onSubmit={addProduct}>
@@ -133,16 +133,16 @@ export default function ProductDetailPage() {
               <span aria-hidden="true">✧</span> Sentuhan personal untuk momen istimewa.
             </p>
             <p>
-              <span aria-hidden="true">↗</span> Pengalaman belanja ini merupakan simulasi
-              portofolio.
+              <span aria-hidden="true">↗</span> Lengkapi dengan kartu ucapan untuk pesan yang lebih
+              personal.
             </p>
           </div>
           <details className="detail-disclosure">
             <summary>Tentang koleksi ini</summary>
             <p>
-              Foto dan informasi produk digunakan untuk memperlihatkan pengalaman toko Jemari Ragil.
-              Stok, ulasan, serta transaksi pada situs ini adalah data demo. Tidak ada pembayaran
-              atau pengiriman sungguhan.
+              Koleksi Jemari Ragil hadir untuk merayakan kelulusan, ulang tahun, dan momen
+              sehari-hari. Padukan pilihanmu dengan foto atau kartu ucapan untuk menyampaikan pesan
+              yang terasa dekat.
             </p>
           </details>
         </div>

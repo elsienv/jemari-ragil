@@ -26,7 +26,7 @@ export default function PaymentStepPage() {
     <CheckoutShell
       step={3}
       title="Satu langkah terakhir."
-      description="Periksa kembali pilihanmu, lalu simpan pesanan demo. Tidak ada uang yang dipindahkan atau pesanan yang dikirim ke toko."
+      description="Periksa kontak, pengiriman, dan pilihan pembayaran sebelum menyimpan pesanan."
     >
       <form className="checkout-form" onSubmit={handleSubmit}>
         <div className="payment-review">
@@ -49,7 +49,7 @@ export default function PaymentStepPage() {
           </div>
         </div>
         <fieldset className="payment-methods">
-          <legend>Metode pembayaran simulasi</legend>
+          <legend>Metode pembayaran</legend>
           <label className={'payment-choice' + (paymentMethod === 'cod' ? ' is-selected' : '')}>
             <input
               type="radio"
@@ -59,10 +59,9 @@ export default function PaymentStepPage() {
               onChange={() => setPaymentMethod('cod')}
             />
             <span>
-              <strong>Bayar saat diterima</strong>
-              <small>Contoh alur COD. Tidak ada penagihan sungguhan.</small>
+              <strong>Bayar saat diterima (COD)</strong>
+              <small>Pembayaran saat barang diterima.</small>
             </span>
-            <span className="payment-demo-tag">DEMO</span>
           </label>
           <label className={'payment-choice' + (paymentMethod === 'manual' ? ' is-selected' : '')}>
             <input
@@ -73,28 +72,23 @@ export default function PaymentStepPage() {
               onChange={() => setPaymentMethod('manual')}
             />
             <span>
-              <strong>Transfer manual</strong>
-              <small>Simulasi saja. Jangan melakukan transfer apa pun.</small>
+              <strong>Transfer bank</strong>
+              <small>Pilihan pembayaran melalui transfer bank.</small>
             </span>
-            <span className="payment-demo-tag">DEMO</span>
           </label>
         </fieldset>
-        <div className="payment-demo-note">
-          <strong>Ini ruang mencoba.</strong>
-          <p>
-            Pesanan hanya disimpan di browser ini untuk profil demo yang sedang digunakan. Data ini
-            tidak menjadi bukti pembelian atau pembayaran.
-          </p>
-        </div>
         {error && (
           <p className="checkout-message checkout-message-error" role="alert">
             {error}
           </p>
         )}
+        <div className="payment-demo-note">
+          <p>Pesanan disimpan di perangkat ini. Pembayaran dan pengiriman belum diproses.</p>
+        </div>
         <div className="checkout-form-actions">
           <Link to="/checkout/shipping">← Pengiriman</Link>
           <button className="button" type="submit" disabled={submitting}>
-            {submitting ? 'Menyimpan…' : 'Simpan pesanan demo'} <span aria-hidden="true">→</span>
+            {submitting ? 'Menyimpan…' : 'Simpan pesanan'} <span aria-hidden="true">→</span>
           </button>
         </div>
       </form>

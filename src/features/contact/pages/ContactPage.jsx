@@ -14,8 +14,7 @@ export default function ContactPage() {
           Mulai dari <em>sebuah sapaan.</em>
         </h1>
         <p className="muted">
-          Punya ide hadiah atau ingin mencoba pengalaman mengirim pesan? Jelajahi formulir demo di
-          bawah ini.
+          Ada pertanyaan tentang koleksi atau ide hadiah yang ingin kamu ceritakan? Mulai dari sini.
         </p>
       </header>
       <div className="container contact-layout">
@@ -30,20 +29,20 @@ export default function ContactPage() {
           </h2>
           <p>Di Jemari Ragil, perhatian kecil menjadi awal dari pemberian yang berarti.</p>
           <div className="contact-demo-note">
-            <p className="eyebrow">Mode portofolio</p>
+            <p className="eyebrow">Sentuhan yang personal</p>
             <p>
-              Formulir ini hanya simulasi. Pesan tidak terkirim dan tidak disimpan. Gunakan nama
-              serta email contoh saat mencoba.
+              Dari buket foto hingga aksesori manik, temukan cara sederhana untuk menyampaikan
+              perhatianmu.
             </p>
           </div>
           <Link className="button-quiet" to="/about">
-            Kenali proyek ini <span aria-hidden="true">↗</span>
+            Tentang Jemari Ragil <span aria-hidden="true">↗</span>
           </Link>
         </aside>
         <section className="contact-form-section" aria-labelledby="contact-form-title">
           <h2 id="contact-form-title">Tinggalkan pesan.</h2>
           <p className="contact-form-description">
-            Coba isi dengan data contoh. Kolom bertanda * wajib diisi.
+            Ceritakan kebutuhan atau pertanyaanmu. Kolom bertanda * wajib diisi.
           </p>
           <form onSubmit={submitMessage} className="contact-demo-form">
             <div className="contact-form-row">
@@ -55,8 +54,8 @@ export default function ContactPage() {
                   required
                   minLength="2"
                   maxLength="80"
-                  autoComplete="off"
-                  placeholder="Nama Contoh"
+                  autoComplete="name"
+                  placeholder="Nama lengkap"
                 />
               </label>
               <label className="form-field">
@@ -66,8 +65,8 @@ export default function ContactPage() {
                   type="email"
                   required
                   maxLength="120"
-                  autoComplete="off"
-                  placeholder="contoh@example.com"
+                  autoComplete="email"
+                  placeholder="nama@email.com"
                 />
               </label>
             </div>
@@ -76,7 +75,7 @@ export default function ContactPage() {
               <select name="subject" defaultValue="gift">
                 <option value="gift">Ide hadiah & koleksi</option>
                 <option value="custom">Produk personal</option>
-                <option value="project">Tentang proyek portofolio</option>
+                <option value="project">Tentang Jemari Ragil</option>
                 <option value="other">Cerita lainnya</option>
               </select>
             </label>
@@ -88,19 +87,17 @@ export default function ContactPage() {
                 minLength="10"
                 maxLength="1500"
                 rows="6"
-                placeholder="Tulis pesan contohmu di sini…"
+                placeholder="Ceritakan ide atau pertanyaanmu di sini…"
               />
             </label>
             <button type="submit" className="button">
-              Coba kirim pesan <span aria-hidden="true">↗</span>
+              Kirim pesan <span aria-hidden="true">↗</span>
             </button>
-            <p className="contact-form-disclaimer">Simulasi saja — tidak ada pesan yang dikirim.</p>
             {submitted && (
               <div className="contact-submit-status" role="status" aria-live="polite">
-                <strong>Simulasi selesai.</strong>
+                <strong>Pesan belum terkirim.</strong>
                 <p>
-                  Pesan tidak terkirim dan tidak disimpan. Terima kasih sudah mencoba formulir
-                  Jemari Ragil.
+                  Pengiriman melalui formulir belum tersedia. Pesanmu tetap ada di formulir ini.
                 </p>
               </div>
             )}
@@ -118,17 +115,17 @@ export default function ContactPage() {
         </div>
         <div className="contact-faq-list">
           <details>
-            <summary>Apakah saya bisa membeli produk di sini?</summary>
+            <summary>Apa saja koleksi Jemari Ragil?</summary>
             <p>
-              Belum. Situs ini adalah portofolio interaktif. Kamu bisa mencoba keranjang dan
-              checkout tanpa membuat transaksi sungguhan.
+              Jelajahi buket foto, cetak foto, suvenir, aksesori, dan hadiah dengan sentuhan
+              personal. Setiap kategori menghadirkan cara berbeda untuk menyimpan kenangan.
             </p>
           </details>
           <details>
-            <summary>Apakah data yang saya isi akan dikirim?</summary>
+            <summary>Bagaimana memilih hadiah yang personal?</summary>
             <p>
-              Formulir kontak ini tidak mengirim atau menyimpan pesan. Gunakan data contoh ketika
-              mencoba fitur-fitur demo.
+              Mulai dari momen yang ingin kamu rayakan, warna favorit, atau foto yang berarti.
+              Lengkapi dengan kartu ucapan untuk menyampaikan pesanmu.
             </p>
           </details>
           <details>

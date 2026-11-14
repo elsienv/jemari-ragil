@@ -14,7 +14,9 @@ export default function OrdersPage() {
           <div>
             <p className="eyebrow">Pilihan yang sudah menemukan tempat</p>
             <h1 className="page-heading">Catatan pesananmu.</h1>
-            <p className="muted">Riwayat simulasi untuk {profileName}, tersimpan di browser ini.</p>
+            <p className="muted">
+              Riwayat pesanan untuk {profileName}, tersimpan di perangkat ini.
+            </p>
           </div>
           <Link to="/store" className="orders-continue">
             Kembali ke koleksi <FiArrowRight aria-hidden="true" />
@@ -24,25 +26,19 @@ export default function OrdersPage() {
           <div className="order-saved-banner" role="status">
             <FiCheck aria-hidden="true" />
             <div>
-              <strong>Pesanan demo berhasil disimpan.</strong>
-              <p>
-                Tidak ada pembayaran atau pengiriman sungguhan. Terima kasih sudah mencoba alurnya.
-              </p>
+              <strong>Pesanan berhasil disimpan.</strong>
+              <p>Rincian pilihanmu sudah tersedia di bawah ini.</p>
             </div>
             <button type="button" aria-label="Tutup pemberitahuan" onClick={dismissConfirmation}>
               ×
             </button>
           </div>
         )}
-        <p className="orders-demo-disclaimer">
-          MODE DEMO{' '}
-          <span>Pesanan ini hanya catatan simulasi, bukan bukti pembelian atau pembayaran.</span>
-        </p>
         {!orders.length ? (
           <div className="empty-state orders-empty">
             <FiPackage aria-hidden="true" />
             <h2>Ceritanya belum dimulai.</h2>
-            <p>Selesaikan checkout demo untuk melihat catatan pilihanmu di sini.</p>
+            <p>Belum ada pesanan yang tersimpan. Pilih produk favoritmu untuk memulai.</p>
             <Link className="button" to="/store">
               Temukan pilihanmu <FiArrowRight aria-hidden="true" />
             </Link>
@@ -53,10 +49,10 @@ export default function OrdersPage() {
               <article className="order-record" key={order.id}>
                 <header className="order-record-heading">
                   <div>
-                    <span className="order-record-number">{order.id}</span>
+                    <span className="order-record-number">{order.displayId}</span>
                     <p>{order.dateLabel}</p>
                   </div>
-                  <span className="order-record-status">Simulasi tersimpan</span>
+                  <span className="order-record-status">Tersimpan</span>
                 </header>
                 <ul className="order-record-products">
                   {order.items.map((item) => (
@@ -78,7 +74,7 @@ export default function OrdersPage() {
                 </ul>
                 <div className="order-record-footer">
                   <div>
-                    <span>{order.paymentLabel} · Simulasi</span>
+                    <span>{order.paymentLabel}</span>
                     <p>{order.shippingLabel}</p>
                   </div>
                   <div>
@@ -112,7 +108,7 @@ export default function OrdersPage() {
                         <dd>{order.subtotalLabel}</dd>
                       </div>
                       <div>
-                        <dt>Pengiriman simulasi</dt>
+                        <dt>Pengiriman</dt>
                         <dd>{order.shippingPriceLabel}</dd>
                       </div>
                       <div>

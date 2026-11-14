@@ -16,7 +16,7 @@ const Footer = () => (
             <br />
             Kenangan yang bisa kamu genggam.
           </p>
-          <span className="jr-footer__demo-label">PORTOFOLIO FRONTEND · DEMO</span>
+          <span className="jr-footer__demo-label">HADIAH PERSONAL · CETAK FOTO</span>
         </div>
         <nav className="jr-footer__links" aria-label="Koleksi di footer">
           <h2>Koleksi</h2>
@@ -33,22 +33,20 @@ const Footer = () => (
           <Link to="/about">Tentang Jemari Ragil</Link>
           <Link to="/blogs">Cerita & inspirasi</Link>
           <Link to="/wishlist">Favorit kamu</Link>
-          <Link to="/orders">Pesanan demo</Link>
+          <Link to="/orders">Pesanan saya</Link>
           <Link to="/contact">Hubungi kami</Link>
         </nav>
         <div className="jr-footer__contact">
-          <h2>Ruang untuk mencoba</h2>
+          <h2>Mari berbagi cerita</h2>
           <p>
-            Berawal dari skripsi.
+            Hadiah personal dari Salatiga.
             <br />
-            Bertumbuh sebagai portofolio.
+            Untuk cerita yang ingin tinggal.
           </p>
-          <Link to="/about">
-            Kenali proyek ini <FiArrowUpRight aria-hidden="true" />
+          <Link to="/contact">
+            Hubungi Jemari Ragil <FiArrowUpRight aria-hidden="true" />
           </Link>
-          <p className="jr-footer__hours">
-            Data demo tersimpan di browser. Gunakan informasi contoh saat mencoba checkout.
-          </p>
+          <p className="jr-footer__hours">Buket, cetak foto, suvenir, dan aksesori pilihan.</p>
         </div>
       </div>
       <div className="jr-footer__bottom">
@@ -56,7 +54,7 @@ const Footer = () => (
           © {new Date().getFullYear()} Jemari Ragil. Dibuat dengan <FiHeart aria-label="hati" /> di
           Salatiga.
         </p>
-        <p>Demo lokal: pesanan dan pembayaran tidak diproses secara nyata.</p>
+        <p>Hal kecil, kenangan yang berarti.</p>
       </div>
     </div>
   </footer>

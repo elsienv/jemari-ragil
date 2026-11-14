@@ -6,7 +6,6 @@ export function useContactForm() {
   const submitMessage = (event) => {
     event.preventDefault();
     setSubmitted(true);
-    event.currentTarget.reset();
   };
 
   return { submitted, submitMessage };
