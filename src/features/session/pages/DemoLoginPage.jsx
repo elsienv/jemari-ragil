@@ -1,3 +1,4 @@
+import { assetUrl } from '../../../shared/lib/assets';
 import { Link } from 'react-router-dom';
 import { FiArrowRight, FiUser } from 'react-icons/fi';
 import { useDemoProfileForm } from '../hooks/useDemoProfileForm';
@@ -15,7 +16,7 @@ export default function DemoLoginPage() {
         </h1>
         <p>Simpan favorit dan coba perjalanan belanja dengan namamu sendiri.</p>
         <img
-          src="/images/product-13-pht.jpeg"
+          src={assetUrl('/images/product-13-pht.jpeg')}
           alt="Cetakan foto polaroid dalam koleksi Jemari Ragil"
         />
       </div>

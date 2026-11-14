@@ -12,13 +12,15 @@
     "start": "vite --host 127.0.0.1",
     "build": "vite build",
     "preview": "vite preview --host 127.0.0.1",
-    "test": "node --test tests/shop.test.js tests/storage.test.js tests/catalog.test.js tests/checkout.test.js",
+    "test": "node --test tests/shop.test.js tests/storage.test.js tests/catalog.test.js tests/checkout.test.js tests/assets.test.js",
     "check:render": "node scripts/check-render.mjs",
     "lint": "eslint . --max-warnings 0",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "check:architecture": "node scripts/check-architecture.mjs",
-    "check": "npm run format:check && npm run lint && npm test && npm run check:architecture && npm run check:render && npm run build"
+    "check": "npm run format:check && npm run lint && npm test && npm run check:architecture && npm run check:render && npm run build",
+    "build:pages": "vite build --base=/jemari-ragil/ --mode github-pages",
+    "check:pages": "node scripts/check-pages.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",

@@ -1,5 +1,9 @@
 # Jemari Ragil
 
+[Repository](https://github.com/elsienv/jemari-ragil) · [Demo](https://elsienv.github.io/jemari-ragil/)
+
+Panduan kerja branch dan pull request: [CONTRIBUTING.md](CONTRIBUTING.md). Konfigurasi demo: [DEPLOYMENT.md](docs/DEPLOYMENT.md).
+
 Portofolio aplikasi toko hadiah, cetak foto, souvenir, dan aksesori. Berawal dari proyek skripsi, lalu dikembangkan dengan React + Vite dan alur belanja simulasi.
 
 > **Demo nonkomersial.** Tidak menerima pembayaran, mengirim barang, atau menghubungi layanan toko. Gunakan data contoh saat checkout. Harga dan stok adalah data demonstrasi.
