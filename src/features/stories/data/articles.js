@@ -1,9 +1,11 @@
+import { assetUrl } from '../../../shared/lib/assets.js';
+
 export const articles = [
   {
     slug: 'hadiah-kecil-cerita-besar',
     title: 'Hadiah kecil, cerita yang besar',
     date: '2026-11-14',
-    image: '/images/blog-1.png',
+    image: assetUrl('/images/blog-1.png'),
     excerpt: 'Hadiah yang berkesan sering kali dimulai dari perhatian pada hal-hal sederhana.',
     body: [
       'Memilih hadiah bisa dimulai dari warna favorit seseorang, hobi kecilnya, atau momen yang pernah kalian bagi. Perhatian itu membuat hadiah terasa lebih personal.',
@@ -15,7 +17,7 @@ export const articles = [
     slug: 'merangkai-kenangan-dengan-foto',
     title: 'Merangkai kenangan dengan foto',
     date: '2026-11-14',
-    image: '/images/blog-2.png',
+    image: assetUrl('/images/blog-2.png'),
     excerpt: 'Dari galeri ponsel ke sudut kamar: beri tempat untuk momen yang ingin kamu ingat.',
     body: [
       'Pilih foto berdasarkan satu cerita. Perjalanan singkat, masa kuliah, atau kebersamaan sehari-hari dapat menjadi tema kecil untuk sebuah album.',
@@ -27,7 +29,7 @@ export const articles = [
     slug: 'di-balik-jemari-ragil',
     title: 'Di balik Jemari Ragil',
     date: '2026-11-14',
-    image: '/images/blog-3.png',
+    image: assetUrl('/images/blog-3.png'),
     excerpt: 'Sebuah proyek skripsi yang tumbuh menjadi tempat belajar dan bereksperimen.',
     body: [
       'Jemari Ragil berawal dari proyek skripsi berupa antarmuka toko online untuk produk hadiah, cetak foto, dan aksesori. Proyek ini dikembangkan kembali sebagai portofolio.',

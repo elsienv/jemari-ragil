@@ -1,4 +1,6 @@
-﻿import React from 'react';
+import { useScrollToSection } from '../../shared/hooks/useScrollToSection';
+import { assetUrl } from '../../shared/lib/assets';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import {
   FiArrowDown,
@@ -16,6 +18,7 @@ import { formatCurrency, formatDate } from '../../shared/lib/format';
 import './HomePage.css';
 
 const HomePage = () => {
+  const scrollToCollection = useScrollToSection('koleksi');
   const featured = products.filter((product) => product.featured).slice(0, 4);
   const selectedCategories = ['bouquet', 'photo', 'gift', 'accessories']
     .map((id) => categories.find((category) => category.id === id))
@@ -67,7 +70,7 @@ const HomePage = () => {
             <FiSun className="jr-home__hero-sun" aria-hidden="true" />
             <div className="jr-home__main-photo">
               <img
-                src="/images/product-01.jpeg"
+                src={assetUrl('/images/product-01.jpeg')}
                 alt="Buket foto personal dengan balutan hitam putih dan pita"
                 loading="eager"
                 width="1080"
@@ -77,7 +80,7 @@ const HomePage = () => {
             </div>
             <div className="jr-home__small-photo">
               <img
-                src="/images/product-15-pht.jpeg"
+                src={assetUrl('/images/product-15-pht.jpeg')}
                 alt="Cetakan photo strip yang menyimpan rangkaian momen"
                 width="1080"
                 height="1080"
@@ -101,7 +104,7 @@ const HomePage = () => {
             </Link>
           </div>
         </div>
-        <a className="jr-home__scroll-cue" href="#koleksi">
+        <a className="jr-home__scroll-cue" href="#koleksi" onClick={scrollToCollection}>
           <span>SCROLL UNTUK MENEMUKAN</span>
           <FiArrowDown aria-hidden="true" />
         </a>
@@ -201,7 +204,7 @@ const HomePage = () => {
               memories
             </span>
             <img
-              src="/images/product-13-pht.jpeg"
+              src={assetUrl('/images/product-13-pht.jpeg')}
               alt="Sekumpulan foto polaroid yang dicetak untuk menyimpan kenangan"
               loading="lazy"
               width="1080"

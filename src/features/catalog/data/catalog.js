@@ -1,51 +1,53 @@
+import { assetUrl } from '../../../shared/lib/assets.js';
+
 // Data demonstrasi portofolio: harga dan stok bukan informasi toko aktif.
 export const categories = [
   {
     id: 'bouquet',
     name: 'Buket',
-    image: '/images/cat-buket.png',
+    image: assetUrl('/images/cat-buket.png'),
     description: 'Rangkai cerita dalam satu genggaman.',
   },
   {
     id: 'gift',
     name: 'Hadiah',
-    image: '/images/cat-gift.png',
+    image: assetUrl('/images/cat-gift.png'),
     description: 'Hal kecil untuk orang yang berarti.',
   },
   {
     id: 'souvenir',
     name: 'Souvenir',
-    image: '/images/cat-souvenir.png',
+    image: assetUrl('/images/cat-souvenir.png'),
     description: 'Kenang-kenangan yang terasa personal.',
   },
   {
     id: 'accessories',
     name: 'Aksesori',
-    image: '/images/cat-acc.png',
+    image: assetUrl('/images/cat-acc.png'),
     description: 'Detail manis untuk keseharianmu.',
   },
   {
     id: 'photo',
     name: 'Cetak foto',
-    image: '/images/cat-photo.png',
+    image: assetUrl('/images/cat-photo.png'),
     description: 'Beri ruang untuk momen favorit.',
   },
   {
     id: 'sticker',
     name: 'Stiker',
-    image: '/images/cat-sticker.png',
+    image: assetUrl('/images/cat-sticker.png'),
     description: 'Tempelkan sedikit kepribadianmu.',
   },
   {
     id: 'custom',
     name: 'Kreasi custom',
-    image: '/images/cat-cust.png',
+    image: assetUrl('/images/cat-cust.png'),
     description: 'Dibuat dengan sentuhan ceritamu.',
   },
   {
     id: 'bundle',
     name: 'Paket hadiah',
-    image: '/images/cat-bund.png',
+    image: assetUrl('/images/cat-bund.png'),
     description: 'Pilihan yang lebih serasi bersama.',
   },
 ];
@@ -277,7 +279,7 @@ export const products = entries.map(
   ([id, title, image, category, price, description, featured, tag, stock]) => ({
     id,
     title,
-    image: `/images/${image}`,
+    image: assetUrl(`/images/${image}`),
     category,
     categoryName: categories.find((item) => item.id === category).name,
     price,
