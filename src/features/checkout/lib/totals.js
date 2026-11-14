@@ -5,19 +5,19 @@ export const shippingMethods = [
     id: 'pickup',
     label: 'Ambil sendiri',
     price: 0,
-    description: 'Simulasi pengambilan langsung. Tanpa biaya pengiriman.',
+    description: 'Pengambilan langsung di Salatiga, tanpa biaya pengiriman.',
   },
   {
     id: 'local',
     label: 'Pengiriman lokal',
     price: 15000,
-    description: 'Biaya tetap contoh untuk pengiriman lokal.',
+    description: 'Pilihan pengiriman untuk alamat dalam kota.',
   },
   {
     id: 'national',
     label: 'Pengiriman luar kota',
     price: 30000,
-    description: 'Biaya tetap contoh untuk pengiriman antarkota.',
+    description: 'Pilihan pengiriman untuk alamat di luar kota.',
   },
 ];
 

@@ -16,7 +16,7 @@ export default function CheckoutShell({ step, title, description, children }) {
         <div className="checkout-page-heading">
           <p className="eyebrow">Sedikit lagi menjadi kenangan</p>
           <h1 className="page-heading">Selesaikan pilihanmu.</h1>
-          <p className="muted">Checkout demo · Tidak ada tagihan atau pengiriman sungguhan.</p>
+          <p className="muted">Lengkapi detail pesanan dan periksa kembali pilihanmu.</p>
         </div>
         <StepIndicator currentStep={step} />
         {storageError && (
@@ -57,7 +57,7 @@ export default function CheckoutShell({ step, title, description, children }) {
                 <dd>{formatCurrency(totals.subtotal)}</dd>
               </div>
               <div>
-                <dt>Pengiriman simulasi</dt>
+                <dt>Pengiriman</dt>
                 <dd>{totals.shipping === 0 ? 'Gratis' : formatCurrency(totals.shipping)}</dd>
               </div>
               <div className="checkout-grand-total">
@@ -66,8 +66,7 @@ export default function CheckoutShell({ step, title, description, children }) {
               </div>
             </dl>
             <p className="checkout-summary-note">
-              Dibuat dengan perhatian, dipilih untuk yang berarti. Semua nominal pada checkout ini
-              adalah simulasi.
+              Hadiah yang dipilih dengan hati, untuk momen yang berarti.
             </p>
           </aside>
         </div>

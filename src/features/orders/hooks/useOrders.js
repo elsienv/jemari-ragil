@@ -9,10 +9,11 @@ function formatOrder(order) {
   const method = shippingMethods.find((shipping) => shipping.id === order.delivery?.method);
   return {
     ...order,
+    displayId: order.id.replace(/^JR-DEMO-/, 'JR-'),
     dateLabel: formatDate(order.createdAt),
     shippingLabel: method?.label || 'Pengambilan',
     deliveryLabel: method?.label || 'Ambil di toko',
-    paymentLabel: order.paymentMethod === 'manual' ? 'Transfer manual' : 'Bayar saat diterima',
+    paymentLabel: order.paymentMethod === 'manual' ? 'Transfer bank' : 'Bayar saat diterima (COD)',
     items: order.items.map((item) => ({
       ...item,
       productPath: '/product/' + item.id,

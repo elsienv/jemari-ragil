@@ -11,7 +11,7 @@ export default function ContactStepPage() {
     <CheckoutShell
       step={1}
       title="Untuk siapa kenangan ini?"
-      description="Isi kontak penerima untuk mencoba alur pemesanan. Gunakan data contoh; ini bukan transaksi sungguhan."
+      description="Isi nama dan kontak penerima untuk melengkapi pesananmu."
     >
       <form onSubmit={handleSubmit} noValidate className="checkout-form">
         <div className="form-field">
@@ -74,7 +74,7 @@ export default function ContactStepPage() {
           </button>
         </div>
         <p className="checkout-privacy">
-          Draft disimpan sementara di tab ini agar tetap tersedia ketika halaman dimuat ulang.
+          Periksa kembali email dan nomor telepon sebelum melanjutkan.
         </p>
       </form>
     </CheckoutShell>

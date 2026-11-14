@@ -108,7 +108,7 @@ export default function CartPage() {
                 ))}
               </ul>
               <p className="cart-selection-note">
-                Hanya produk yang dipilih yang akan masuk ke pesanan demo.
+                Hanya produk yang dipilih yang akan masuk ke pesanan.
               </p>
             </div>
             <aside className="cart-order-summary">
@@ -142,10 +142,7 @@ export default function CartPage() {
               {!selectedProducts.length && (
                 <p className="cart-pick-reminder">Pilih barang untuk melanjutkan.</p>
               )}
-              <p className="cart-demo-note">
-                Mode demo. Harga dan stok adalah contoh; tidak ada transaksi atau pengiriman
-                sungguhan.
-              </p>
+              <p className="cart-demo-note">Pilihan pengiriman tersedia saat checkout.</p>
             </aside>
           </div>
         )}

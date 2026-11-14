@@ -74,20 +74,20 @@ const Header = () => {
           </Link>
           {profile ? (
             <details className="jr-header__account">
-              <summary className="jr-header__icon" aria-label={'Akun demo ' + profile.name}>
+              <summary className="jr-header__icon" aria-label={'Profil ' + profile.name}>
                 <FiUser />
                 <span className="jr-header__session-dot" />
               </summary>
               <div className="jr-header__account-menu">
                 <span>Halo, {profile.name}</span>
-                <small>Akun demo lokal</small>
+                <small>Profil belanja</small>
                 <Link
                   to="/orders"
                   onClick={(event) =>
                     event.currentTarget.closest('details').removeAttribute('open')
                   }
                 >
-                  Pesanan demo saya
+                  Pesanan saya
                 </Link>
                 <button
                   type="button"
@@ -96,7 +96,7 @@ const Header = () => {
                     leaveDemo();
                   }}
                 >
-                  Keluar dari demo
+                  Keluar
                 </button>
               </div>
             </details>
@@ -104,7 +104,7 @@ const Header = () => {
             <Link
               className="jr-header__icon jr-header__account-link"
               to="/login"
-              aria-label="Masuk akun demo"
+              aria-label="Buka profil belanja"
             >
               <FiUser />
             </Link>
@@ -148,7 +148,7 @@ const Header = () => {
                   Favorit kamu ({wishlist.length})<FiArrowRight aria-hidden="true" />
                 </Link>
                 <Link to={profile ? '/orders' : '/login'}>
-                  {profile ? 'Pesanan demo saya' : 'Masuk akun demo'}
+                  {profile ? 'Pesanan saya' : 'Profil belanja'}
                   <FiArrowRight aria-hidden="true" />
                 </Link>
                 <Link to="/contact">

@@ -126,8 +126,7 @@ export function createDemoOrder({
     throw new Error('Lengkapi informasi kontak terlebih dahulu.');
   if (Object.keys(deliveryErrors(current.delivery)).length)
     throw new Error('Lengkapi informasi pengiriman terlebih dahulu.');
-  if (!['cod', 'manual'].includes(paymentMethod))
-    throw new Error('Pilih metode pembayaran simulasi.');
+  if (!['cod', 'manual'].includes(paymentMethod)) throw new Error('Pilih metode pembayaran.');
   const items = products.map((product) => ({
     ...product,
     quantity: normalizeQuantity(product.quantity, product.stock ?? 99),

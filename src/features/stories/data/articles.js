@@ -10,7 +10,7 @@ export const articles = [
     body: [
       'Memilih hadiah bisa dimulai dari warna favorit seseorang, hobi kecilnya, atau momen yang pernah kalian bagi. Perhatian itu membuat hadiah terasa lebih personal.',
       'Coba gabungkan satu benda sederhana dengan pesan tulisan tangan. Sebuah foto bersama dan beberapa kalimat yang jujur bisa memberi makna lebih pada hadiahmu.',
-      'Katalog ini menjadi ruang eksplorasi untuk ide-ide tersebut. Harga, stok, dan proses pemesanannya adalah data demonstrasi portofolio.',
+      'Saat ragu, mulai dari satu kenangan yang kalian bagi. Pilih foto, tuliskan pesan pendek, lalu padukan dengan buket, cetakan, atau aksesori yang sesuai dengan kesehariannya.',
     ],
   },
   {
@@ -30,11 +30,12 @@ export const articles = [
     title: 'Di balik Jemari Ragil',
     date: '2026-11-14',
     image: assetUrl('/images/blog-3.png'),
-    excerpt: 'Sebuah proyek skripsi yang tumbuh menjadi tempat belajar dan bereksperimen.',
+    excerpt:
+      'Mengenal Jemari Ragil, tempat menemukan hadiah personal dan memberi bentuk pada kenangan.',
     body: [
-      'Jemari Ragil berawal dari proyek skripsi berupa antarmuka toko online untuk produk hadiah, cetak foto, dan aksesori. Proyek ini dikembangkan kembali sebagai portofolio.',
-      'Pengembangan berfokus pada alur yang bisa dicoba: menemukan produk, menyimpan favorit, mengelola keranjang, dan membuat pesanan simulasi.',
-      'Aplikasi ini adalah demonstrasi. Tidak ada transaksi uang atau pengiriman barang. Data demo hanya tersimpan pada browser yang digunakan.',
+      'Jemari Ragil adalah toko hadiah personal berbasis di Salatiga dengan pilihan buket, cetak foto, suvenir, dan aksesori. Setiap jenis hadiah memberi cara berbeda untuk merayakan hubungan dan momen yang berarti.',
+      'Bagi kami, makna sebuah hadiah terletak pada perhatian di baliknya. Foto bersama, warna favorit, atau pesan sederhana bisa mengubah benda kecil menjadi sesuatu yang terasa dekat dengan penerimanya.',
+      'Kenangan tidak selalu harus tinggal di galeri ponsel. Beri bentuk lewat foto polaroid, rangkaian buket, atau suvenir personal, lalu lengkapi dengan cerita yang hanya kalian pahami.',
     ],
   },
 ];

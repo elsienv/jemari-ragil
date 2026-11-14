@@ -115,7 +115,7 @@ test('checkout langsung tanpa pilihan atau data lengkap tidak dapat membuat pesa
     () => build({ draft: { ...validDraft(), delivery: { method: 'national' } } }),
     /informasi pengiriman/,
   );
-  assert.throws(() => build({ paymentMethod: 'credit-card' }), /pembayaran simulasi/);
+  assert.throws(() => build({ paymentMethod: 'credit-card' }), /metode pembayaran/);
 });
 
 test('riwayat mengabaikan null dan order rusak, mengisolasi profil, serta mencegah ID duplikat', () => {
