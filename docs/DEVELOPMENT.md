@@ -27,3 +27,7 @@ Pesanan hanya tersimpan pada browser. Profil tidak memakai password atau verifik
 - Build produksi Vite berhasil.
 - 19 render halaman dengan state kosong/terisi lulus melalui npm run check:render.
 - Pemeriksaan visual Chrome dihentikan kontrol computer-use karena URL browser Windows tidak dapat diverifikasi. Responsivitas dan interaksi browser belum diuji secara visual.
+
+## Refactor struktur dan hooks
+
+Kode dipisahkan ke app, features, layouts, pages, dan shared. URL, data katalog, kelas CSS, serta kunci penyimpanan demo dipertahankan. Panduan penambahan fitur tersedia dalam ARCHITECTURE.md. Formatter, lint hooks, dan pemeriksaan batas dependensi ditambahkan untuk menjaga struktur tetap konsisten.

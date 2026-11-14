@@ -1,7 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { existsSync } from 'node:fs';
-import { products, categories, articles } from '../src/data/catalog.js';
+import { products, categories } from '../src/features/catalog/data/catalog.js';
+import { articles } from '../src/features/stories/data/articles.js';
 
 test('semua produk punya ID unik, kategori valid, harga rupiah, dan aset lokal yang tersedia', () => {
   assert.equal(new Set(products.map((product) => product.id)).size, products.length);

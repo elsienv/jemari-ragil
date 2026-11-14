@@ -1,0 +1,78 @@
+.checkout-steps {
+  border-top: 1px solid #e4d9ce;
+  border-bottom: 1px solid #e4d9ce;
+}
+.checkout-steps ol {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.checkout-steps li {
+  position: relative;
+}
+.checkout-steps li + li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 28%;
+  height: 44%;
+  width: 1px;
+  background: #e4d9ce;
+}
+.checkout-steps button {
+  width: 100%;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 12px;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  font-size: 0.83rem;
+  color: #948a81;
+  cursor: pointer;
+}
+.checkout-steps button:disabled {
+  cursor: not-allowed;
+}
+.checkout-steps .is-current button,
+.checkout-steps .is-complete button {
+  color: #741f38;
+}
+.checkout-steps .is-current {
+  box-shadow: inset 0 -2px #741f38;
+}
+.checkout-step-number {
+  width: 31px;
+  height: 31px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #d7ccbf;
+  border-radius: 50%;
+  font-size: 0.68rem;
+  font-weight: 600;
+}
+.checkout-steps .is-current .checkout-step-number {
+  border-color: #741f38;
+  background: #741f38;
+  color: #fff;
+}
+.checkout-steps .is-complete .checkout-step-number {
+  border-color: #cbb2b6;
+  background: #f1e1e4;
+}
+@media (max-width: 480px) {
+  .checkout-steps button {
+    flex-direction: column;
+    font-size: 0.72rem;
+    gap: 8px;
+    padding: 17px 5px;
+  }
+  .checkout-step-number {
+    width: 28px;
+    height: 28px;
+  }
+}
